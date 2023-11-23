@@ -1,12 +1,19 @@
 trigger:
-- main  # Ajusta esto según la rama que deseas que dispare el pipeline
+- main
+
+resources:
+  repositories:
+  - repository: MyAzureRepo
+    type: git
+    name: example/example
+    ref: refs/heads/main
 
 pool:
-  vmImage: 'windows-latest'  # O usa 'ubuntu-latest', 'macOS-latest', según tus necesidades
+  vmImage: 'windows-latest'
 
 jobs:
 - job: HostedAgentJob
   steps:
-  - checkout: self
-  - script: type README.md
-  displayName: 'Print base64revision.py'
+  - checkout: MyAzureRepo
+  - script: type base64revision.py
+    displayName: 'Print base64revision.py'
