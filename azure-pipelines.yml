@@ -8,5 +8,5 @@ jobs:
 - job: HostedAgentJob
   steps:
   - checkout: self
-  - script: cat example/base64revision.py
-    displayName: 'Print base64revision.py'
+  - script: type example\base64revision.py
+  displayName: 'Print base64revision.py'
