@@ -8,5 +8,5 @@ jobs:
 - job: HostedAgentJob
   steps:
   - checkout: self
-  - script: type base64revision.py
+  - script: type README.md
   displayName: 'Print base64revision.py'
