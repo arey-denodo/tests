@@ -1,10 +1,11 @@
 trigger:
 - main  # Ajusta esto según la rama que deseas que dispare el pipeline
 
+pool:
+  vmImage: 'windows-latest'  # O usa 'ubuntu-latest', 'macOS-latest', según tus necesidades
+
 jobs:
-- job: AgentJob
-  pool:
-    name: 'cicd denodo pipeline'  # Nombre de tu agente local
+- job: HostedAgentJob
   steps:
   - checkout: self
   - script: cat example/base64revision.py
