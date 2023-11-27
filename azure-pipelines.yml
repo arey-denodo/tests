@@ -17,3 +17,5 @@ jobs:
   - checkout: MyAzureRepo
   - script: type base64revision.py
     displayName: 'Print base64revision.py'
+  - script: echo "Tarea hecha"
+    displayName: 'Ejecutar Script'
